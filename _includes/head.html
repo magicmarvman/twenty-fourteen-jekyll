@@ -1,0 +1,33 @@
+<head>
+	<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}{% if page.subtitle %} {{ page.subtitle }} {% endif %}</title>
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/style.css" />
+	<!-- Costum background color -->
+	{% if site.backgroundcolor %}<style>body{background-color:{{ site.backgroundcolor }}}</style>{% endif %}
+	<!-- Accent color -->
+	{% if site.accentcolor && site.accentcolordark %}
+	<style>
+		.site-title a, a:hover {
+			color: {{ site.accentcolor }} !important;
+		}
+		.primary-navigation li:hover > a, .primary-navigation li.focus > a {
+    	background-color: {{ site.accentcolordark }} !important;
+    	color: #fff !important;
+		}
+		::selection {
+       background-color: {{ site.accentcolordark }};
+       color: #fff;
+		}
+		::-moz-selection {
+       background-color: {{ site.accentcolordark }};
+       color: #fff;
+		}
+	</style>
+	<meta name="theme-color" content="{{ site.accentcolordark }}" />
+	{% endif %}
+	<!-- Lato font loader-->
+	<link rel='stylesheet' id='twentyfourteen-lato-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+	<script src="{{ site.url }}{{ site.baseurl }}/assets/js/jquery.js"></script>
+	<script src="{{ site.url }}{{ site.baseurl }}/assets/js/jquery-migrate.min.js"></script>
+	<script src="{{ site.url }}{{ site.baseurl }}/assets/js/functions.js"></script>
+</head>

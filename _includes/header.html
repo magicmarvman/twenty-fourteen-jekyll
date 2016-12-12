@@ -1,0 +1,47 @@
+<div id="page" class="hfeed site">
+	{% if page.header-image %}
+	<div id="site-header">
+		<a href="{{ site.url }}{{ site.baseurl }}" rel="home">
+			<img src="{{ site.url }}{{ site.baseurl }}/assets/{{ page.image }}" alt="{{ site.title }}">
+		</a>
+	</div>
+	{% else if site.header-image %}
+	<div id="site-header">
+		<a href="{{ site.url }}{{ site.baseurl }}" rel="home">
+			<img src="{{ site.url }}{{ site.baseurl }}/assets/{{ site.header-image }}" alt="{{ site.title }}">
+		</a>
+	</div>
+	{% endif %}
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="{{ site.url }}{{ site.baseurl }}" rel="home">{{ site.title }}</a></h1>
+			{% if site.searchtoggle %}
+			<div class="search-toggle">
+				<a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container">Search</a>
+			</div>
+			{% endif %}
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+        {% for p in site.pages %}
+          <li class="menu-item{% if p.url == page.url %} active{% endif %}">
+            <a href="{{ p.url }}">{{ p.title }}</a>
+          </li>
+        {% endfor %}
+
+			</nav>
+		</div>
+		{% if site.searchtoggle %}
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+				<form role="search" method="get" class="search-form" action="">
+				<label>
+					<span class="screen-reader-text">Search</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+				</form>
+			</div>
+		</div>
+		{% endif %}
+	</header>
