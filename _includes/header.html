@@ -24,7 +24,7 @@
 				<button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
 				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
         {% for p in site.pages %}
-          <li class="menu-item{% if p.url == page.url %} active{% endif %}">
+          <li class="menu-item{% if p.url == page.url %} current-menu-item{% endif %}">
             <a href="{{ p.url }}">{{ p.title }}</a>
           </li>
         {% endfor %}
