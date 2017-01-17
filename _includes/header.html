@@ -21,14 +21,15 @@
 			</div>
 			{% endif %}
 			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<ul class="navmenu">
 				<button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
 				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
-        {% for p in site.pages %}
-          <li class="menu-item{% if p.url == page.url %} current-menu-item{% endif %}">
-            <a href="{{ p.url }}">{{ p.title }}</a>
-          </li>
-        {% endfor %}
-
+	        {% for p in site.pages %}
+	          <li class="menu-item{% if p.url == page.url %} current-menu-item{% endif %}">
+	            <a href="{{ p.url }}">{{ p.title }}</a>
+	          </li>
+	        {% endfor %}
+				</ul>
 			</nav>
 		</div>
 		{% if site.searchtoggle %}
